@@ -1,0 +1,413 @@
+/* RESET */
+body {
+  margin: 0;
+  background-color: #000;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+.cabeçalho {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #000;
+  color: #fff;
+  z-index: 1000;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-image:
+    linear-gradient(to bottom, rgba(123, 121, 121, 0.2) 20%, rgba(0, 0, 0, 1)),
+    url("matheusMontegroFotoBackground.png" ); 
+
+  background-size: cover;
+  background-position: center 10%;
+  background-repeat: no-repeat;
+}
+
+.title {
+  font-family: "Condiment", cursive;
+  font-size: 96px;
+  line-height: 1;
+  color: #EBEAEA;
+
+  margin: 0;
+  padding-left: 10%;
+}
+
+.subtitle {
+  color: #EBEAEA;
+  padding-left: 10%;
+  margin-top: 35px;
+}
+
+/* GALERIA */
+.galeria {
+  padding: 80px 0;
+}
+
+
+
+.grid-imagens {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-top: 10%;
+  gap: 20px;
+}
+
+.item {
+  position: relative;
+}
+
+.item img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+/* TEXTO */
+.texto {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+
+  color: white;
+  font-size: 64px;
+  font-weight: bold;
+  text-align: center;
+
+  margin: 0;
+}
+
+.grid-imagens img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+
+
+  filter: grayscale(100%);
+  opacity: 0;
+
+  transform: translateY(40px) scale(0.95);
+
+  transition: 
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.8s ease,
+    filter 0.6s ease;
+}
+
+.grid-imagens img.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: grayscale(100%);
+}
+
+/* Hover */
+.grid-imagens img.show:hover {
+  transform: translateY(0) scale(1.02);
+  filter: grayscale(0%); /* garante que fique colorido */
+}
+
+/* BOTÃO */
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.btn-orcamento {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+
+  padding: 15px 30px;
+  border: 2px solid white;
+  border-radius: 999px;
+
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 1px;
+
+  transition: all 0.3s ease;
+}
+
+.btn-orcamento .arrow {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.btn-orcamento:hover {
+  background-color: white;
+  color: black;
+}
+
+.btn-orcamento:hover .arrow {
+  transform: translate(5px, -5px);
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  color: #aaa;
+  font-size: 12px;
+}
+
+/* SELEÇÃO */
+::selection {
+  background-color: #fff;
+  color: #000;
+}
+
+.contlg { position: relative;}
+    .logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  
+      height: auto;
+      max-height: 40px;
+      width: auto;
+      margin-right: 140px;
+      cursor: pointer;
+    }
+
+    .containervdo {
+  width: 110%;
+  height: 110%; /* altura que você quer */
+  overflow: hidden;
+}
+
+.containervdo video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* corta automaticamente */
+}
+
+/* 404 */
+.texto-404 {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  
+  color: white;
+  font-size: 20px;
+  font-weight: 100;
+  
+  
+  font-family: "Roboto", sans-serif;
+}
+
+.btn-inc {
+  display: flex;
+  justify-content: center;
+  margin-top: 0px;
+  position: absolute;
+  top: 60%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+}
+
+.container1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -65px;
+  margin-top: -20px;
+  width: 130px;
+  height: 40px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  /* HEADER */
+  .cabeçalho {
+    height: 56px;
+    padding: 0 16px;
+    justify-content: center;
+  }
+
+  .contlg {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo {
+    position: static;
+    transform: none;
+    margin-right: 0;
+    max-height: 32px;
+  }
+
+  /* HERO */
+  .hero {
+    height: 100vh;
+    background-position: center center;
+    padding: 0 20px;
+    justify-content: center;
+
+     background-image:
+    linear-gradient(to bottom, rgba(123, 121, 121, 0.2) 20%, rgba(0, 0, 0, 1)),
+    url("matheusMontegroFotoBackground.png" ); 
+
+  background-size: cover;
+  background-position: right 10%;
+  background-repeat: no-repeat;
+  }
+
+  .title {
+    font-size: 48px;
+    padding-left: 0;
+    text-align: left;
+    max-width: 90%;
+  }
+
+  .subtitle {
+    font-size: clamp(36px, 6vw, 96px);
+    padding-left: 0;
+    margin-top: 16px;
+    max-width: 90%;
+  }
+
+  /* GALERIA */
+  .galeria {
+    padding: 50px 0;
+  }
+
+  .grid-imagens {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding-top: 8%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .item img,
+  .grid-imagens img {
+    height: 260px;
+  }
+
+  .texto {
+    font-size: 32px;
+    padding: 0 10px;
+  }
+
+  /* BOTÃO */
+  .container {
+    margin-top: 30px;
+    padding: 0 16px;
+  }
+
+  .btn-orcamento {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px;
+    font-size: 14px;
+    gap: 12px;
+  }
+
+  /* VÍDEO */
+      .containervdo {
+    width: 100vw;
+    height: 100vh;
+  padding-right: 0%;
+  overflow: hidden;
+}
+
+.containervdo video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* corta automaticamente */
+}
+
+  /* 404 */
+  .texto-404 {
+    left: 50%;
+    top: 47%;
+    width: 85%;
+    text-align: center;
+    font-size: 16px;
+    transform: translate(-50%, -50%);
+  }
+
+  .btn-inc {
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+  }
+
+  .container1 {
+    width: 120px;
+    height: 36px;
+    margin-left: -60px;
+    margin-top: -18px;
+  }
+#white-background-btn {
+  background-color: #fff;
+}
+
+#black-text{
+  color: #080808;
+}
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 38px;
+  }
+
+  .subtitle {
+    font-size: 9px;
+  }
+
+  .item img,
+  .grid-imagens img {
+    height: 220px;
+  }
+
+  .texto {
+    font-size: 26px;
+  }
+
+  .btn-orcamento {
+    font-size: 13px;
+  }
+
+      .containervdo {
+    width: 100vw;
+    height: 100vh;
+  padding-right: 0%;
+  overflow: hidden;
+}
+
+.containervdo video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* corta automaticamente */
+}
+
+
+
+}
